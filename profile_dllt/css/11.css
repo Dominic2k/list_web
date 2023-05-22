@@ -1,0 +1,93 @@
+/**{
+	padding: 0;
+	margin: 0;
+}*/
+#menu_text{
+	background-color: #7e8780 ;
+	/*Màu của background*/
+	text-align: center;
+	/*Căn giữa chữ*/
+	padding: 30px;
+	margin: 0;
+}
+
+nav{
+	background-color: #333;
+	overflow: hidden;
+/*	Ẩn phần thừa ra ngoài padding*/
+}
+
+nav a{
+	color: white;
+	padding: 14px 20px;
+	display: block;
+	/*Mỗi cái trong thanh menu là 1 hàng ngang*/
+	text-align: center;
+	text-decoration: none;
+/*	float: left;*/
+/*	Cho mỗi cái a trôi qua bên trái*/
+}
+nav a.menu_left{
+	float: left;
+}
+/*Chú ý đoạn a.menu không được có dấu cách*/
+/*Class dùng dấu chấm id dùng dấu thăng*/
+nav a.menu_right{
+	float: right;
+}
+nav a:hover{
+/*hover là hiểu hơ hơ con chuột lên 1 cái nút*/
+	background-color: #DDD;
+	color: black;
+}
+#left_side{
+	flex: 40%;
+	padding: 10px 20px;
+}
+
+#right_side{
+	flex: 60%;
+	padding: 10px 20px;
+}
+
+#flex_container{
+	display: flex;
+	flex-wrap: nowrap;
+	/*Phần bị thừa từ pading sẽ không bị đẩy xuống*/
+}
+footer{
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+}
+footer > a{
+	color: #0b57cf;
+}
+
+@media(max-width: 800px){
+	#left_side{
+		flex: 100%;
+	}
+	#right_side{
+		flex: 100%%;
+	}
+
+	#flex_container{
+		flex-wrap: wrap;
+}
+@media(max-width: 400px){
+	#left_side{
+		flex: 100%;
+	}
+	#right_side{
+		flex: 100%%;
+	}
+	#flex_container{
+		flex-wrap: wrap;
+	}
+}
+#daily{
+	padding: 10px 20px;
+}
+

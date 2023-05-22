@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign Up</title>
+	<style type="text/css">
+		.span_error{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<fieldset>
+		<legend>Form Register:</legend>
+		Name:
+		<input type="text" id="name">
+		<span id="error_name" class="span_error"></span>
+		<br>
+		Year born:
+		<input type="date" id="year_born">
+		<span id="error_year_born" class="span_error"></span>
+
+		<br>
+		Gender:
+		<input type="radio" name="gender">Man
+		<input type="radio" name="gender">Women
+		<span id="error_gender" class="span_error"></span>
+
+		<br>
+		Email:
+		<input type="email" id="email">
+		<span id="error_email" class="span_error"></span>
+
+		<br>
+		Password:
+		<input type="password" id="password">
+		<span id="error_password" class="span_error"></span>
+
+		<br>
+		Majors:
+		<select id="majors">
+			<option value="none">None</option>
+			<option value="deleloper">Developer</option>
+			<option value="security">Security</option>
+			<option value="coder">Coder</option>
+		</select>
+		<span id="error_majors" class="span_error"></span>
+
+		<br>
+		<button type="button" onclick=" return check()">Sign Up</button>
+	</fieldset>
+</form>
+<script type="text/javascript">
+function check(){
+	let test_error = false;
+
+	//Ten
+	let name = document.getElementById('name').value;
+	if (name.length === 0){
+		document.getElementById('error_name').innerHTML = 'Please enter your name!';
+		test_error = true;
+	}else{
+		let regex_name = /^([a-zA-Z0-9ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+)$/;
+		if(!regex_name.test(name)){
+			document.getElementById('error_name').innerHTML = 'Please enter your name again !';
+			test_error = true;
+		}else{
+			document.getElementById('error_name').innerHTML = '';
+		}
+	}
+	
+	//ngay sinh
+	let year_born = document.getElementById('year_born').value;
+	if (year_born.length === 0){
+		document.getElementById('error_year_born').innerHTML = 'Please enter your year born !';
+		test_error = true;
+	}else{
+		document.getElementById('error_year_born').innerHTML ='';
+	}
+	//gioi_tinh
+	let array_gender = document.getElementsByName('gender');
+	let check_gender = false;
+	for(let i = 0; i < array_gender.length; i++){
+		if(array_gender[i].checked){
+			check_gender = true;
+		}
+	}
+	if(check_gender == false){
+		document.getElementById('error_gender').innerHTML = 'Please enter your gender !';
+		test_error = true;
+	}else{
+		document.getElementById('error_gender').innerHTML = '';
+	}
+
+	//Email
+	let email = document.getElementById('email').value;
+	if (email.length === 0){
+		document.getElementById('error_email').innerHTML = 'Please enter your email !';
+		test_error = true;
+	}else{
+		document.getElementById('error_email').innerHTML ='';
+	}
+
+	//mat khau
+	let input_password = document.getElementById('password');
+	let password = input_password.value;
+	if(password.length === 0){
+		document.getElementById('error_password').innerHTML = 'Please enter your password !';
+		test_error = true;
+	}else if(password.length < 8){
+		document.getElementById('error_password').innerHTML = 'Password is too short, please enter again !';
+		test_error = true;
+	}else{
+		document.getElementById('error_password').innerHTML = '';
+	}
+	//Lop
+	var majors = document.getElementById('majors');
+	var value = majors.options[majors.selectedIndex].value;
+	// console.log(value);
+	if (value == "none"){
+		document.getElementById('error_majors').innerHTML = 'Please enter your majors !';
+		test_error = true;
+	}else{
+		document.getElementById('error_majors').innerHTML ='';
+	}
+	//end
+	if(test_error){
+		return false;
+	}
+}
+</script>
+</body>
+</html>

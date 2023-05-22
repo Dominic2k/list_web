@@ -1,0 +1,33 @@
+<!-- Viet chuong trinh nhap mot so va kiem tra so do la so chan hay le-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form>
+		Enter number:
+		<input type="number" id="input_number">
+		<br>
+		<button type="button" onclick="print()">Test even_odd</button>
+	</form>
+	<div id="result"></div>
+	<script type="text/javascript">
+		function print(){
+			var number = document.getElementById('input_number').value;
+			if(number % 2 == 0){
+				document.getElementById('result').innerHTML = 'This is even number!';
+				document.getElementById('result').style.color = 'black';
+			}else if(number % 2 == 1){
+				document.getElementById('result').innerHTML = 'This is odd number';
+				document.getElementById('result').style.color = 'black';
+			}else{
+				document.getElementById('result').innerHTML = 'Please input again';
+				document.getElementById('result').style.color = 'red';
+			}
+		}
+	</script>
+</body>
+</html>

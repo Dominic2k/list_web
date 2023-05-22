@@ -1,0 +1,37 @@
+<!-- Chuong trinh kiem tra so nguyen to -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		
+	</title>
+</head>
+<body>
+<form>
+	Enter number:
+	<input type="number" id="input_number">
+	<br>
+	<button type="button" onclick="Test()">Test prime</button>
+</form>
+<div id="result"></div>
+<script type="text/javascript">
+	function Test(){
+		let number = parseInt(document.getElementById("input_number").value);
+		let divisible_count = 0;
+		for (let i = 0; i <= number; i ++){
+			if(number % i == 0){
+				divisible_count ++;
+			}
+		}
+		if (divisible_count == 2) {
+			result = "Right";
+		}else{
+			result = "Wrong"
+		}
+		document.getElementById("result").innerHTML = result;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!-- Viet chuong trinh kiem tra xem cac thang trong nam co bao nhieu ngay dung switch case va function -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form>
+		Enter month:
+		<input type="number" id="input_month">
+		<br>
+		Enter year:
+		<input type="number" id="input_year">
+		<br>
+		<button type="button" onclick="print()">Test have max day to play</button>
+	</form>
+	<div id="result"></div>
+	<script type="text/javascript">
+		function print(){
+			let month = parseInt(document.getElementById('input_month').value);
+			let day;
+			switch(month){
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					day = 31;
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					day = 30;
+					break;
+				case 2:
+					day = 28;
+					break;
+				default:
+					day = 'Input wrong, please enter again';
+					break;
+			}
+			document.getElementById('result').innerHTML = 'Have ' + day + ' day';
+		}
+	</script>
+</body>
+</html>

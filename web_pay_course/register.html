@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>PDDat Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="PDDat Form">
+	<meta name="keywords" content="Forms, Course, IT, Registration">
+	<meta name="author" content="Pham Duc Dat">
+	<script src="register.js"></script>
+</head>
+<body>
+	<h1>PDDat Education</h1>
+	<h2>Registration Form</h2>
+	<div id="error" style="color: red"></div>
+	<form id="registerForm" method="post" action="confirm.html" novalidate>
+		<fieldset>
+			<legend>Personal information</legend>
+			<p><label for="firstname">Enter your First Name:</label>
+			<input type="text" id="firstname" name="firstname" pattern="[A-Z a-z]{1,30}" /></p>
+
+			<p><label for="lastname">Enter your Last Name:</label>
+			<input type="text" id="lastname" name="lastname" pattern="[A-Z a-z]{1,30}"/></p>
+
+			<p><label for="email">Enter your Email:</label>
+			<input type="text" id="email" name="email" pattern="^[a-zA-Z]*@[a-z.A-Z]*$" /></p>
+
+			<p><label for="phone">Enter your Phone Number:</label>
+			<input type="text" id="phone" name="phone" pattern="^((\+84)|0)[0-9]{9,10}$" /></p>
+
+			<p><label for="age">Enter your Age:</label>
+			<input type="text" id="age" name="age" pattern="/^(?:1[0-4]\d|[0-9]{1,2})$/" /></p>
+
+		</fieldset>
+		<fieldset id="radio_occupation">
+			<legend>Select your occupation</legend>
+			<label for="highschool">Highschool:</label>
+			<input type="radio" id="highschool" name="occupation" value="highschool" /><br>
+
+			<label for="university">University:</label>
+			<input type="radio" id="university" name="occupation" value="university" /><br>
+			
+			<label for="working">Working:</label>
+			<input type="radio" id="working" name="occupation" value="working" /><br>
+			
+			<label for="retired">Retired:</label>
+			<input type="radio" id="retired" name="occupation" value="retired" /><br>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Select Course</legend>
+			<label for="course_HTML_CSS_JS">HTML - CSS - JS: 1000$</label>
+			<input type="checkbox" id="course_HTML_CSS_JS" name="course_HTML_CSS_JS" value="selected" /><br>
+
+			<label for="course_python">Python: 2000$</label>
+			<input type="checkbox" id="course_python" name="course_python" value="selected" /><br>
+
+			<label for="course_autoit">Auto IT: 3000$</label>
+			<input type="checkbox" id="course_autoit" name="course_autoit" value="selected" /><br>
+
+			<label for="course_mysql"> MySQL: 4000$</label>
+			<input type="checkbox" id="course_mysql" name="course_mysql" value="selected" /><br>
+		</fieldset>
+		<br>
+		<label for="payment">Payment method</label>
+		<select name="payment" id="payment">
+			<option value="none">Please select</option>
+			<option value="paypal">Paypal</option>
+			<option value="creditcard">Credit Card</option>
+		</select>
+		<br>
+		<br>
+		<input type="submit" value="Register Now"/>
+		<input type="reset" value="Reset"/>
+	</form>
+</body>
+</html>

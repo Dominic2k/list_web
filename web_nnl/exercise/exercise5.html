@@ -1,0 +1,36 @@
+<!-- Chuong trinh nhap vao x so va phat sinh 1 mang gom co x phan tu, chi ra so lon nhat cua mang do -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form>
+		Enter the element of array: 
+		<input type="number" id="input_number">
+		<br>
+		<button type="button" onclick="random()">Random a array</button>
+	</form>
+	<div id="result"></div>
+	<script type="text/javascript">
+		function random(){
+			let number = parseInt(document.getElementById('input_number').value);
+			let array = [];
+			let random_number;
+			for(let i = 0; i < number; i++){
+				random_number = Math.round(Math.random() * 10);
+				array.push(random_number);
+			}
+			let max_number = array[0];
+			for(let i = 0; i < array.length; i++){
+				if(max_number < array[i]){
+					max_number = array[i]
+				}
+			}
+			document.getElementById('result').innerHTML = array + " The max number is: " + max_number;
+		}
+	</script>
+</body>
+</html>

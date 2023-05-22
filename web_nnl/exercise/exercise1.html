@@ -1,0 +1,14 @@
+<!--giả sử bạn là kế toán cho một công ti, bạn viết chương trình để nhập lương nhân viên, tính thuế thu nhập và lương ròng( số tiền lương thực sự mà nhân viên đó nhận được ) với các thông số sau:
+30% cho lương 15 tiệu
+20% cho lương 7 đến 15 triệu
+10% cho lương dưới 7 triệu -->
+<script type="text/javascript">
+	let wage = 9;
+	if (wage == 15) {
+		document.write('Tax is equal to: ' + wage * 30 / 100);
+	}else if (wage > 7 && wage < 15){
+		document.write('Tax is equal to: ' + wage * 20 /100);
+	}else if(wage < 7){
+		document.write('Tax is equal to: ' + wage * 10 /100);
+	}
+</script>
